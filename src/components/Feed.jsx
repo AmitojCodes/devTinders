@@ -11,7 +11,7 @@ const Feed = () => {
 
   const fetchFeed = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/user/feed", {
+      const res = await axios.get(" /api/user/feed", {
         withCredentials: true,
       });
 
@@ -24,7 +24,7 @@ const Feed = () => {
   const requestProfile = async (id, request) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/request/profile/${request}/${id}`,
+        ` /api/request/profile/${request}/${id}`,
         {},
         {
           withCredentials: true,

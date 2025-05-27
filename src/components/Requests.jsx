@@ -10,7 +10,7 @@ const Requests = () => {
   const [showToast, setShowToast] = useState(false);
   const fetchRequests = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/user/requests", {
+      const res = await axios.get(" /api/user/requests", {
         withCredentials: true,
       });
       console.log(res.data.data);
@@ -23,7 +23,7 @@ const Requests = () => {
   const handleRequest = async (id, request) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/request/review/${request}/${id}`,
+        ` /api/request/review/${request}/${id}`,
         {},
         { withCredentials: true }
       );

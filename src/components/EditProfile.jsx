@@ -19,7 +19,7 @@ const EditProfile = () => {
     setError("");
     try {
       const res = await axios.patch(
-        "http://localhost:3000/profile/update",
+        " /api/profile/update",
         {
           firstName,
           lastName,

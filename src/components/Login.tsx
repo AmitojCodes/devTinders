@@ -14,7 +14,7 @@ const Login: React.FC = () => {
   const handleLogin = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/login",
+        " /api/login",
         {
           emailId,
           password: pass,

@@ -23,7 +23,7 @@ const SignUp = () => {
   const handleSave = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/signup",
+        " /api/signup",
         {
           firstName,
           lastName,
