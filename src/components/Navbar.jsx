@@ -3,6 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { removeUser } from "../utils/userSlice";
+import { BASE_URL } from "../utils/constants";
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const res = await axios.post(
-        " /api/logout",
+        BASE_URL+"/logout",
         {},
         {
           withCredentials: true,

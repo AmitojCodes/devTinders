@@ -3,13 +3,14 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnections } from "../utils/connectionsSlice";
 import ConnectionsCard from "./ConnectionsCard";
+import { BASE_URL } from "../utils/constants";
 
 const Connections = () => {
   const dispatch = useDispatch();
   const connections = useSelector((store) => store.connections);
   const fetchConnections = async () => {
     try {
-      const res = await axios.get(" /api/user/connections", {
+      const res = await axios.get(BASE_URL+"/user/connections", {
         withCredentials: true,
       });
       dispatch(addConnections(res.data.data));

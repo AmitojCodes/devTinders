@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BASE_URL } from "../utils/constants";
 
 const SignUp = () => {
   const [showToast, setShowToast] = useState(false);
@@ -23,7 +24,7 @@ const SignUp = () => {
   const handleSave = async () => {
     try {
       const res = await axios.post(
-        " /api/signup",
+        BASE_URL+"/signup",
         {
           firstName,
           lastName,

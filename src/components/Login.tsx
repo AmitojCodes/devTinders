@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../utils/constants";
 
 const Login: React.FC = () => {
   const [emailId, setEmailId] = useState("harpreetkaur@gmail.com");
@@ -14,7 +15,7 @@ const Login: React.FC = () => {
   const handleLogin = async () => {
     try {
       const res = await axios.post(
-        " /api/login",
+        BASE_URL+"/login",
         {
           emailId,
           password: pass,

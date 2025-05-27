@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addRequests, removeRequests } from "../utils/requestsSlice";
 import ConnectionsCard from "./ConnectionsCard";
+import { BASE_URL } from "../utils/constants";
 
 const Requests = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Requests = () => {
   const [showToast, setShowToast] = useState(false);
   const fetchRequests = async () => {
     try {
-      const res = await axios.get(" /api/user/requests", {
+      const res = await axios.get(BASE_URL+"/user/requests", {
         withCredentials: true,
       });
       console.log(res.data.data);
@@ -23,7 +24,7 @@ const Requests = () => {
   const handleRequest = async (id, request) => {
     try {
       const res = await axios.post(
-        ` /api/request/review/${request}/${id}`,
+        `${BASE_URL}/request/review/${request}/${id}`,
         {},
         { withCredentials: true }
       );

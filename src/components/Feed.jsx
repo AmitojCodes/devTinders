@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFeed, removeFeed } from "../utils/feedSlice";
 import Card from "./Card";
+import { BASE_URL } from "../utils/constants";
 
 const Feed = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Feed = () => {
 
   const fetchFeed = async () => {
     try {
-      const res = await axios.get(" /api/user/feed", {
+      const res = await axios.get(BASE_URL+"/user/feed", {
         withCredentials: true,
       });
 
@@ -24,7 +25,7 @@ const Feed = () => {
   const requestProfile = async (id, request) => {
     try {
       const res = await axios.post(
-        ` /api/request/profile/${request}/${id}`,
+        BASE_URL + `/request/profile/${request}/${id}`,
         {},
         {
           withCredentials: true,
