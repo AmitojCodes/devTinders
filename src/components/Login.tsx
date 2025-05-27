@@ -25,7 +25,7 @@ const Login: React.FC = () => {
       );
       console.log(res);
       dispatch(addUser(res.data));
-      navigate("/");
+      navigate("/edit");
     } catch (err) {
       console.log(err);
       setError(err.response.data);

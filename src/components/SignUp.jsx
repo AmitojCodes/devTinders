@@ -41,7 +41,7 @@ const SignUp = () => {
       setTimeout(() => {
         setShowToast(false);
         dispatch(addUser(res.data.data));
-        navigate("/");
+        navigate("/edit");
       }, 3000);
       console.log(res);
     } catch (err) {
