@@ -11,7 +11,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const res = await axios.post(
-        BASE_URL+"/logout",
+        BASE_URL + "/logout",
         {},
         {
           withCredentials: true,
@@ -57,6 +57,9 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link to="/connections">Connections</Link>
+                </li>
+                <li>
+                  <Link to="/premium">Premium</Link>
                 </li>
                 <li>
                   <Link to="/requests">Requests</Link>
